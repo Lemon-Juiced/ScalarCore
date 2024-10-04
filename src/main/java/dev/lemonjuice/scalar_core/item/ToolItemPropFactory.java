@@ -20,6 +20,16 @@ public class ToolItemPropFactory {
     }
 
     /**
+     * Creates Item.Properties for a sword item that does not burn in fire.
+     *
+     * @param tier the tier of the sword
+     * @return the Item.Properties for the sword
+     */
+    public static Item.Properties getNonBurningSwordItemProperties(Tier tier){
+        return new Item.Properties().fireResistant().attributes(SwordItem.createAttributes(tier, 6, -2.4F));
+    }
+
+    /**
      * Creates Item.Properties for a pickaxe item.
      *
      * @param tier the tier of the pickaxe
