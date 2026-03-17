@@ -1,12 +1,18 @@
 package dev.lemonjuice.scalar_core.category;
 
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.animal.horse.SkeletonHorse;
-import net.minecraft.world.entity.animal.horse.ZombieHorse;
+import net.minecraft.world.entity.animal.camel.CamelHusk;
+import net.minecraft.world.entity.animal.equine.SkeletonHorse;
+import net.minecraft.world.entity.animal.equine.ZombieHorse;
+import net.minecraft.world.entity.animal.nautilus.ZombieNautilus;
 import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
 import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.entity.monster.*;
+import net.minecraft.world.entity.monster.skeleton.*;
+import net.minecraft.world.entity.monster.spider.CaveSpider;
+import net.minecraft.world.entity.monster.spider.Spider;
 import net.minecraft.world.entity.monster.warden.Warden;
+import net.minecraft.world.entity.monster.zombie.*;
 
 public class Category {
 
@@ -17,13 +23,37 @@ public class Category {
      * @return true if the entity is undead, false otherwise
      */
     public static boolean isUndeadEntity(LivingEntity entity) {
-        return (entity instanceof Phantom ||
-                entity instanceof AbstractSkeleton || // Bogged, Stray, Wither Skeleton
-                entity instanceof SkeletonHorse ||
-                entity instanceof WitherBoss ||
+        return (entity instanceof Phantom || isZombieEntity(entity) || isSkeletonEntity(entity));
+    }
+
+    /**
+     * Checks if the entity is a zombie entity
+     *
+     * @param entity the entity to check
+     * @return true if the entity is a zombie, false otherwise
+     */
+    public static boolean isZombieEntity(LivingEntity entity){
+        return (entity instanceof CamelHusk ||
                 entity instanceof Zoglin ||
-                entity instanceof Zombie || // Drowned, Husk, Zombie Villager, Zombified Piglin
-                entity instanceof ZombieHorse);
+                entity instanceof ZombieHorse ||
+                entity instanceof ZombieNautilus ||
+                entity instanceof Zombie);  // (Drowned, Husk, Zombie, Zombie Villager, Zombified Piglin)
+    }
+
+    /**
+     * Checks if the entity is a skeleton entity
+     *
+     * @param entity the entity to check
+     * @return true if the entity is a skeleton, false otherwise
+     */
+    public static boolean isSkeletonEntity(LivingEntity entity){
+        return (entity instanceof Bogged ||
+                entity instanceof Parched ||
+                entity instanceof SkeletonHorse ||
+                entity instanceof Stray ||
+                entity instanceof WitherBoss ||
+                entity instanceof WitherSkeleton ||
+                entity instanceof Skeleton);
     }
 
     /**
@@ -73,8 +103,7 @@ public class Category {
      */
     public static boolean isPassiveEntity(LivingEntity entity) {
         return (entity instanceof net.minecraft.world.entity.animal.Animal ||
-                entity instanceof net.minecraft.world.entity.npc.Villager ||
-                entity instanceof net.minecraft.world.entity.npc.WanderingTrader);
+                entity instanceof net.minecraft.world.entity.npc.villager.AbstractVillager);
     }
 
     /**
