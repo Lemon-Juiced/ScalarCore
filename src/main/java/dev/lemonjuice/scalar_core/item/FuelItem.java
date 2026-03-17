@@ -3,7 +3,7 @@ package dev.lemonjuice.scalar_core.item;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.world.level.block.entity.FuelValues;
 
 public class FuelItem extends Item{
     private final int items;
@@ -14,7 +14,8 @@ public class FuelItem extends Item{
     }
 
     @Override
-    public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
+    public int getBurnTime(ItemStack itemStack, @org.jspecify.annotations.Nullable RecipeType<?> recipeType, FuelValues fuelValues) {
         return items * 200;
     }
+
 }
