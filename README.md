@@ -6,9 +6,9 @@ It is primarily designed to make modding some common features a little easier an
 Active development is on 26.1.1, which has some fundamental changes compared to 1.21.1, as such this library has somewhat pivoted.
 - Category Package
   - Category: Hold categories of mobs when checking against a mob type, currently holds:
-    - ArthropodW
+    - Arthropod
     - Boss (Elder Guardians, Withers, and Ender Dragons)
-      - BossLike (Bosses and other mobs that are similar to bosses, such as the Warden)
+    - BossLike (Bosses and other mobs that are similar to bosses, such as the Warden)
     - Dragon
     - Ender
     - Passive
