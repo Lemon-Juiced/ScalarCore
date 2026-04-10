@@ -2,8 +2,8 @@
 Scalar Core is a library mod for Minecraft that provides a variety of utilities and tools for modders.  
 It is primarily designed to make modding some common features a little easier and more efficient.  
 
-# 26.1.1 Features
-Active development is on 26.1.1, which has some fundamental changes compared to 1.21.1, as such this library has somewhat pivoted.
+# 26.1+ Features
+Active development is on 26.1+, which has some fundamental changes compared to 1.21.1, as such this library has somewhat pivoted.
 - Category Package
   - Category: Hold categories of mobs when checking against a mob type, currently holds:
     - Arthropod
